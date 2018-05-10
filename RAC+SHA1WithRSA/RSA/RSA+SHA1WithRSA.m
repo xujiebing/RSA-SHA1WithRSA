@@ -14,7 +14,8 @@
 
 #pragma mark - 公共方法
 
-+ (NSString *)signSHA1WithRSA:(NSString *)signatureString privateKey:(NSString *)privateKey {
++ (NSString *)signSHA1WithRSA:(NSString *)signatureString
+                   privateKey:(NSString *)privateKey {
     if (privateKey.length == 0) {
         return nil;
     }
@@ -45,7 +46,9 @@
     return [signedHash base64EncodedString];
 }
 
-+ (BOOL)verifySHA1WithRSA:(NSString *)signatureString signature:(NSString *)signature publicKey:(NSString *)publicKey {
++ (BOOL)verifySHA1WithRSA:(NSString *)signatureString
+                signature:(NSString *)signature
+                publicKey:(NSString *)publicKey {
     if (publicKey.length == 0 || signatureString.length == 0 || signature.length == 0) {
         return NO;
     }
